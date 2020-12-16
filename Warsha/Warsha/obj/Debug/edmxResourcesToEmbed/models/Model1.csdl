@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="FactorManagmentModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Good">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Price" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Moshtriats" Relationship="FactorManagmentModel.FK_Moshtriat_Goods" FromRole="Good" ToRole="Moshtriat" />
+  </EntityType>
+  <EntityType Name="Mabeaat">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Prod_id" Type="Int32" Nullable="false" />
+    <Property Name="date" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="note" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Product" Relationship="FactorManagmentModel.FK_Mabeaat_Product" FromRole="Mabeaat" ToRole="Product" />
+  </EntityType>
+  <EntityType Name="Masrofat">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="price" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="notes" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="date" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="Moshtriat">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Goods_id" Type="Int32" Nullable="false" />
+    <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="note" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Good" Relationship="FactorManagmentModel.FK_Moshtriat_Goods" FromRole="Moshtriat" ToRole="Good" />
+    <Property Name="quantity" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="price" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Mabeaats" Relationship="FactorManagmentModel.FK_Mabeaat_Product" FromRole="Product" ToRole="Mabeaat" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityContainer Name="FactorManagmentEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Goods" EntityType="Self.Good" />
+    <EntitySet Name="Mabeaats" EntityType="Self.Mabeaat" />
+    <EntitySet Name="Masrofats" EntityType="Self.Masrofat" />
+    <EntitySet Name="Moshtriats" EntityType="Self.Moshtriat" />
+    <EntitySet Name="Products" EntityType="Self.Product" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <AssociationSet Name="FK_Moshtriat_Goods" Association="FactorManagmentModel.FK_Moshtriat_Goods">
+      <End Role="Good" EntitySet="Goods" />
+      <End Role="Moshtriat" EntitySet="Moshtriats" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Mabeaat_Product" Association="FactorManagmentModel.FK_Mabeaat_Product">
+      <End Role="Product" EntitySet="Products" />
+      <End Role="Mabeaat" EntitySet="Mabeaats" />
+    </AssociationSet>
+  </EntityContainer>
+  <Association Name="FK_Moshtriat_Goods">
+    <End Type="FactorManagmentModel.Good" Role="Good" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="FactorManagmentModel.Moshtriat" Role="Moshtriat" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Good">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Moshtriat">
+        <PropertyRef Name="Goods_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Mabeaat_Product">
+    <End Type="FactorManagmentModel.Product" Role="Product" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="FactorManagmentModel.Mabeaat" Role="Mabeaat" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Mabeaat">
+        <PropertyRef Name="Prod_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>
