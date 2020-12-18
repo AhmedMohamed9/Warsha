@@ -6,7 +6,7 @@
     </Key>
     <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Price" Type="varchar(max)" Nullable="false" />
+    <Property Name="Price" Type="numeric" Precision="18" Scale="1" Nullable="false" />
   </EntityType>
   <EntityType Name="Mabeaat">
     <Key>
@@ -16,6 +16,8 @@
     <Property Name="Prod_id" Type="int" Nullable="false" />
     <Property Name="date" Type="date" Nullable="false" />
     <Property Name="note" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Quantity" Type="int" Nullable="false" />
+    <Property Name="Total_price" Type="numeric" Precision="18" Scale="1" Nullable="false" />
   </EntityType>
   <EntityType Name="Masrofat">
     <Key>
@@ -23,7 +25,7 @@
     </Key>
     <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="name" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="price" Type="varchar(max)" Nullable="false" />
+    <Property Name="price" Type="numeric" Precision="18" Scale="1" Nullable="false" />
     <Property Name="notes" Type="nvarchar(max)" />
     <Property Name="date" Type="date" />
   </EntityType>
@@ -36,6 +38,8 @@
     <Property Name="Date" Type="date" Nullable="false" />
     <Property Name="note" Type="nvarchar(max)" />
     <Property Name="quantity" Type="int" Nullable="false" />
+    <Property Name="Total_price" Type="numeric" Precision="18" Scale="1" />
+    <Property Name="pr" Type="numeric" Precision="18" Scale="1" />
   </EntityType>
   <EntityType Name="Product">
     <Key>
@@ -43,7 +47,7 @@
     </Key>
     <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="name" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="price" Type="varchar(max)" Nullable="false" />
+    <Property Name="price" Type="numeric" Precision="18" Scale="1" Nullable="false" />
   </EntityType>
   <EntityType Name="sysdiagrams">
     <Key>

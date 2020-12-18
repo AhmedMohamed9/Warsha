@@ -131,6 +131,16 @@
     <Compile Include="Views\Goods\index.Designer.cs">
       <DependentUpon>index.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Mabeaat\addEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Mabeaat\addEdit.Designer.cs">
+      <DependentUpon>addEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Mabeaat\index.cs" />
+    <Compile Include="Views\Mabeaat\index.Designer.cs">
+      <DependentUpon>index.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Masrofat\add.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -155,11 +165,35 @@
     <Compile Include="Views\Masrofat\index.Designer.cs">
       <DependentUpon>index.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Montgat\AddEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Montgat\AddEdit.Designer.cs">
+      <DependentUpon>AddEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Montgat\index.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Montgat\index.Designer.cs">
+      <DependentUpon>index.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Moshtriat\AddEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Moshtriat\AddEdit.Designer.cs">
+      <DependentUpon>AddEdit.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Moshtriat\index.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Views\Moshtriat\index.Designer.cs">
       <DependentUpon>index.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\summary\summary.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\summary\summary.Designer.cs">
+      <DependentUpon>summary.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -172,6 +206,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Views\Goods\add.resx">
       <DependentUpon>add.cs</DependentUpon>
@@ -183,6 +218,12 @@
       <DependentUpon>Edit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Goods\index.resx">
+      <DependentUpon>index.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Mabeaat\addEdit.resx">
+      <DependentUpon>addEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Mabeaat\index.resx">
       <DependentUpon>index.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Masrofat\add.resx">
@@ -197,8 +238,20 @@
     <EmbeddedResource Include="Views\Masrofat\index.resx">
       <DependentUpon>index.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\Montgat\AddEdit.resx">
+      <DependentUpon>AddEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Montgat\index.resx">
+      <DependentUpon>index.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Moshtriat\AddEdit.resx">
+      <DependentUpon>AddEdit.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Moshtriat\index.resx">
       <DependentUpon>index.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\summary\summary.resx">
+      <DependentUpon>summary.cs</DependentUpon>
     </EmbeddedResource>
     <EntityDeploy Include="models\Model1.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
@@ -233,6 +286,27 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\Mosh.ico" />
+    <None Include="Resources\Montagt.ico" />
+    <None Include="Resources\gear-2-64.ico" />
+    <None Include="Resources\Dollars.ico" />
+    <None Include="Resources\masrof.ico" />
+    <None Include="Resources\cas1.ico" />
+    <None Include="Resources\search1.ico" />
+    <None Include="Resources\search.ico" />
+    <None Include="Resources\shop.ico" />
+    <None Include="Resources\add.ico" />
+    <None Include="Resources\cas.ico" />
+    <None Include="Resources\cancel.png" />
+    <None Include="Resources\edit-2-321.ico" />
+    <None Include="Resources\edit-2-32.ico" />
+    <None Include="Resources\shoping.png" />
+    <None Include="Resources\Close.png" />
+    <None Include="Resources\Edit.png" />
+    <None Include="Resources\Delete.png" />
+    <None Include="Resources\ad.png" />
+    <None Include="Resources\add2.png" />
+    <None Include="Resources\add.png" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

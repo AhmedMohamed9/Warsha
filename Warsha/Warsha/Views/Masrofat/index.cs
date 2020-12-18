@@ -61,7 +61,7 @@ namespace Warsha.Views.Masrofat
             ed.metroTextBox3.Text = DataGrid.CurrentRow.Cells[3].Value.ToString();
             ed.dateTimePicker1.Text =DataGrid.CurrentRow.Cells[4].Value.ToString();
             ed.ShowDialog();
-            DataGrid.DataSource = db.Masrofats.ToList();
+           
         }
 
         private void button4_Click(object sender, EventArgs e)

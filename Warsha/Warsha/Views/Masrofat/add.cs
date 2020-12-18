@@ -28,7 +28,7 @@ namespace Warsha.Views.Masrofat
             models.Masrofat ms = new models.Masrofat()
             {
                 name = metroTextBox1.Text,
-                price = metroTextBox2.Text,
+                price = decimal.Parse(metroTextBox2.Text),
                 notes=metroTextBox3.Text,
                 date=dateTimePicker1.Value
                 
@@ -36,6 +36,20 @@ namespace Warsha.Views.Masrofat
             crd.masrofat(ms, System.Data.Entity.EntityState.Added);
             MessageBox.Show("تم الاضافة بنجاح");
             Close();
+        }
+
+        private void metroTextBox2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+            if (ch == 46 && metroTextBox2.Text.IndexOf('.') != -1)
+            {
+                e.Handled = true;
+                return;
+            }
+            if (!char.IsDigit(ch) && ch != 8 && ch != 46)
+            {
+                e.Handled = true;
+            }
         }
     }
 }

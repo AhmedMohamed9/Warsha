@@ -135,6 +135,7 @@
             this.metroTextBox2.Size = new System.Drawing.Size(246, 33);
             this.metroTextBox2.TabIndex = 17;
             this.metroTextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.metroTextBox2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.metroTextBox2_KeyPress);
             // 
             // metroTextBox1
             // 

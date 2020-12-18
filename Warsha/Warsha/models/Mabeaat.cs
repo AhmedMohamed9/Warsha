@@ -18,6 +18,8 @@ namespace Warsha.models
         public int Prod_id { get; set; }
         public System.DateTime date { get; set; }
         public string note { get; set; }
+        public int Quantity { get; set; }
+        public decimal Total_price { get; set; }
     
         public virtual Product Product { get; set; }
     }

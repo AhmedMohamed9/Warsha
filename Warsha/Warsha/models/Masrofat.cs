@@ -16,7 +16,7 @@ namespace Warsha.models
     {
         public int id { get; set; }
         public string name { get; set; }
-        public string price { get; set; }
+        public decimal price { get; set; }
         public string notes { get; set; }
         public Nullable<System.DateTime> date { get; set; }
     }

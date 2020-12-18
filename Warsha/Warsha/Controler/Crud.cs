@@ -20,5 +20,15 @@ namespace Warsha.Controler
             db.Entry(ms).State = n;
             db.SaveChanges();
         }
+        public void Montagat(Product ms,EntityState n)
+        {
+            db.Entry(ms).State = n;
+            db.SaveChanges();
+        }
+        public void mabeaat(Mabeaat ms,EntityState n)
+        {
+            db.Entry(ms).State = n;
+            db.SaveChanges();
+        }
     }
 }

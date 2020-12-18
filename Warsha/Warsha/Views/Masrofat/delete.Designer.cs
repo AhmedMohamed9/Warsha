@@ -108,6 +108,7 @@
             // 
             // metroTextBox2
             // 
+            this.metroTextBox2.Enabled = false;
             this.metroTextBox2.FontSize = MetroFramework.MetroTextBoxSize.Tall;
             this.metroTextBox2.FontWeight = MetroFramework.MetroTextBoxWeight.Light;
             this.metroTextBox2.Location = new System.Drawing.Point(23, 232);
@@ -120,6 +121,7 @@
             // 
             // metroTextBox1
             // 
+            this.metroTextBox1.Enabled = false;
             this.metroTextBox1.FontSize = MetroFramework.MetroTextBoxSize.Tall;
             this.metroTextBox1.FontWeight = MetroFramework.MetroTextBoxWeight.Light;
             this.metroTextBox1.Location = new System.Drawing.Point(23, 181);

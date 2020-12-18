@@ -15,7 +15,7 @@ namespace Warsha.Views.Masrofat
     public partial class edit : MetroFramework.Forms.MetroForm
     {
         Crud crd = new Crud();
-        private static index frm;
+        
         public edit()
         {
             InitializeComponent();
@@ -37,7 +37,7 @@ namespace Warsha.Views.Masrofat
             {
                 id=Int32.Parse(metroTextBox4.Text),
                 name = metroTextBox1.Text,
-                price = metroTextBox2.Text,
+                price = decimal.Parse(metroTextBox2.Text),
                 notes = metroTextBox3.Text,
                 date = dateTimePicker1.Value
 
@@ -45,6 +45,20 @@ namespace Warsha.Views.Masrofat
             crd.masrofat(ms, System.Data.Entity.EntityState.Modified);
             MessageBox.Show("تم التعديل بنجاح");
             Close();
+        }
+
+        private void metroTextBox2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+            if (ch == 46 && metroTextBox2.Text.IndexOf('.') != -1)
+            {
+                e.Handled = true;
+                return;
+            }
+            if (!char.IsDigit(ch) && ch != 8 && ch != 46)
+            {
+                e.Handled = true;
+            }
         }
     }
 }

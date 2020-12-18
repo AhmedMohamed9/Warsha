@@ -27,7 +27,7 @@ namespace Warsha.Views.Goods
         {
             models.Good goo = new models.Good();
             goo.Name = metroTextBox1.Text;
-            goo.Price = metroTextBox2.Text;
+            goo.Price = decimal.Parse(metroTextBox2.Text);
             goo.id =Int32.Parse(metroTextBox3.Text);
             db.Entry(goo).State = System.Data.Entity.EntityState.Modified;
             db.SaveChanges();
@@ -37,6 +37,25 @@ namespace Warsha.Views.Goods
         private void button2_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void metroTextBox2_KeyDown(object sender, KeyEventArgs e)
+        {
+            
+        }
+
+        private void metroTextBox2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+            if (ch == 46 && metroTextBox2.Text.IndexOf('.') != -1)
+            {
+                e.Handled = true;
+                return;
+            }
+            if (!char.IsDigit(ch) && ch != 8 && ch != 46)
+            {
+                e.Handled = true;
+            }
         }
     }
 }

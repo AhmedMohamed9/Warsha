@@ -13,6 +13,8 @@
     <EntitySetMapping Name="Mabeaats">
       <EntityTypeMapping TypeName="FactorManagmentModel.Mabeaat">
         <MappingFragment StoreEntitySet="Mabeaat">
+          <ScalarProperty Name="Total_price" ColumnName="Total_price" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
           <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="Prod_id" ColumnName="Prod_id" />
           <ScalarProperty Name="date" ColumnName="date" />
@@ -34,6 +36,8 @@
     <EntitySetMapping Name="Moshtriats">
       <EntityTypeMapping TypeName="FactorManagmentModel.Moshtriat">
         <MappingFragment StoreEntitySet="Moshtriat">
+          <ScalarProperty Name="pr" ColumnName="pr" />
+          <ScalarProperty Name="Total_price" ColumnName="Total_price" />
           <ScalarProperty Name="quantity" ColumnName="quantity" />
           <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="Goods_id" ColumnName="Goods_id" />

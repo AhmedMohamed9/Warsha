@@ -28,7 +28,7 @@ namespace Warsha.Views.Goods
             models.Good goo = new models.Good();
             goo.id = Int32.Parse(metroTextBox3.Text);
             goo.Name = metroTextBox1.Text;
-            goo.Price = metroTextBox2.Text;
+            goo.Price =decimal.Parse(metroTextBox2.Text);
             db.Entry(goo).State = System.Data.Entity.EntityState.Deleted;
             db.SaveChanges();
             Close();

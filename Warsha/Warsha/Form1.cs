@@ -47,5 +47,23 @@ namespace Warsha
             Views.Moshtriat.index frm = new Views.Moshtriat.index();
             frm.ShowDialog();
         }
+
+        private void metroTile3_Click(object sender, EventArgs e)
+        {
+            Views.Montgat.index frm = new Views.Montgat.index();
+            frm.ShowDialog();
+        }
+
+        private void metroTile4_Click(object sender, EventArgs e)
+        {
+            Views.Mabeaat.index frm = new Views.Mabeaat.index();
+            frm.ShowDialog();
+        }
+
+        private void metroTile5_Click(object sender, EventArgs e)
+        {
+            Views.summary.summary sm = new Views.summary.summary();
+            sm.ShowDialog();
+        }
     }
 }

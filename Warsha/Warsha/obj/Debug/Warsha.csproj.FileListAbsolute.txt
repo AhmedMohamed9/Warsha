@@ -24,3 +24,9 @@ D:\projects\Warsha\Warsha\Warsha\obj\Debug\Warsha.Views.Masrofat.delete.resource
 D:\projects\Warsha\Warsha\Warsha\obj\Debug\Warsha.Views.Masrofat.edit.resources
 D:\projects\Warsha\Warsha\Warsha\obj\Debug\Warsha.Views.Masrofat.index.resources
 D:\projects\Warsha\Warsha\Warsha\obj\Debug\Warsha.Views.Moshtriat.index.resources
+D:\projects\Warsha\Warsha\Warsha\obj\Debug\Warsha.Views.Moshtriat.AddEdit.resources
+D:\projects\Warsha\Warsha\Warsha\obj\Debug\Warsha.Views.Montgat.index.resources
+D:\projects\Warsha\Warsha\Warsha\obj\Debug\Warsha.Views.Montgat.AddEdit.resources
+D:\projects\Warsha\Warsha\Warsha\obj\Debug\Warsha.Views.Mabeaat.index.resources
+D:\projects\Warsha\Warsha\Warsha\obj\Debug\Warsha.Views.Mabeaat.addEdit.resources
+D:\projects\Warsha\Warsha\Warsha\obj\Debug\Warsha.Views.summary.summary.resources
