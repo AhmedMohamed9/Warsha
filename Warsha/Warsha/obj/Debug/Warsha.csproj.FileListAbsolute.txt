@@ -30,3 +30,11 @@ D:\projects\Warsha\Warsha\Warsha\obj\Debug\Warsha.Views.Montgat.AddEdit.resource
 D:\projects\Warsha\Warsha\Warsha\obj\Debug\Warsha.Views.Mabeaat.index.resources
 D:\projects\Warsha\Warsha\Warsha\obj\Debug\Warsha.Views.Mabeaat.addEdit.resources
 D:\projects\Warsha\Warsha\Warsha\obj\Debug\Warsha.Views.summary.summary.resources
+D:\projects\Warsha\Warsha\Warsha\bin\Debug\Warsha.exe.manifest
+D:\projects\Warsha\Warsha\Warsha\bin\Debug\Warsha.application
+D:\projects\Warsha\Warsha\Warsha\obj\Debug\Warsha.exe.manifest
+D:\projects\Warsha\Warsha\Warsha\obj\Debug\Warsha.application
+D:\projects\Warsha\Warsha\Warsha\obj\Debug\Warsha.Views.Togaar.addEdit.resources
+D:\projects\Warsha\Warsha\Warsha\obj\Debug\Warsha.Views.Togaar.index.resources
+D:\projects\Warsha\Warsha\Warsha\obj\Debug\Warsha.Views.Mabeaat.Calculations.resources
+D:\projects\Warsha\Warsha\Warsha\obj\Debug\Warsha.Views.Togaar.History.resources

@@ -25,12 +25,18 @@ namespace Warsha.Views.Masrofat
 
         private void button1_Click(object sender, EventArgs e)
         {
+            if (metroTextBox1.Text==string.Empty||metroTextBox2.Text==string.Empty)
+            {
+                label5.Text = "ادخل البيانات سليمه";
+                return;
+            }
             models.Masrofat ms = new models.Masrofat()
             {
                 name = metroTextBox1.Text,
                 price = decimal.Parse(metroTextBox2.Text),
                 notes=metroTextBox3.Text,
-                date=dateTimePicker1.Value
+                date=dateTimePicker1.Value,
+                Quantity=decimal.Parse(textBox1.Text)
                 
             };
             crd.masrofat(ms, System.Data.Entity.EntityState.Added);
@@ -50,6 +56,25 @@ namespace Warsha.Views.Masrofat
             {
                 e.Handled = true;
             }
+        }
+
+        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+            if (ch == 46 && textBox1.Text.IndexOf('.') != -1)
+            {
+                e.Handled = true;
+                return;
+            }
+            if (!char.IsDigit(ch) && ch != 8 && ch != 46)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void metroTextBox2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

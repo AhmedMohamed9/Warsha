@@ -36,6 +36,7 @@
             this.metroTextBox3 = new MetroFramework.Controls.MetroTextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // button2
@@ -123,13 +124,25 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(218, 30);
             this.textBox2.TabIndex = 15;
+            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             this.textBox2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox2_KeyPress);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.DarkRed;
+            this.label4.Location = new System.Drawing.Point(140, 76);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(0, 20);
+            this.label4.TabIndex = 16;
             // 
             // AddEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(402, 427);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label3);
@@ -157,5 +170,6 @@
         public System.Windows.Forms.TextBox textBox2;
         public MetroFramework.Controls.MetroTextBox metroTextBox3;
         public System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label4;
     }
 }

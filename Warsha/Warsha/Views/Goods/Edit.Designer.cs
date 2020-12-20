@@ -36,6 +36,7 @@
             this.metroTextBox1 = new MetroFramework.Controls.MetroTextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.metroTextBox3 = new MetroFramework.Controls.MetroTextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // button2
@@ -126,18 +127,30 @@
             this.metroTextBox3.Enabled = false;
             this.metroTextBox3.FontSize = MetroFramework.MetroTextBoxSize.Tall;
             this.metroTextBox3.FontWeight = MetroFramework.MetroTextBoxWeight.Light;
-            this.metroTextBox3.Location = new System.Drawing.Point(127, 146);
+            this.metroTextBox3.Location = new System.Drawing.Point(152, 146);
             this.metroTextBox3.Multiline = true;
             this.metroTextBox3.Name = "metroTextBox3";
-            this.metroTextBox3.Size = new System.Drawing.Size(115, 36);
+            this.metroTextBox3.Size = new System.Drawing.Size(90, 36);
             this.metroTextBox3.TabIndex = 12;
             this.metroTextBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.label4.Location = new System.Drawing.Point(115, 98);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(127, 20);
+            this.label4.TabIndex = 14;
+            this.label4.Text = "ادخل اسم البضاعه";
             // 
             // Edit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(413, 454);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.metroTextBox3);
             this.Controls.Add(this.button2);
@@ -165,5 +178,6 @@
         public MetroFramework.Controls.MetroTextBox metroTextBox1;
         private System.Windows.Forms.Label label3;
         public MetroFramework.Controls.MetroTextBox metroTextBox3;
+        private System.Windows.Forms.Label label4;
     }
 }

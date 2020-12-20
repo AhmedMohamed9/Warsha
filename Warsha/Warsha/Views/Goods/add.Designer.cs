@@ -35,6 +35,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.entityCommand1 = new System.Data.Entity.Core.EntityClient.EntityCommand();
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // metroTextBox1
@@ -121,11 +122,22 @@
             this.entityCommand1.EnablePlanCaching = true;
             this.entityCommand1.Transaction = null;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Red;
+            this.label3.Location = new System.Drawing.Point(115, 114);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(0, 20);
+            this.label3.TabIndex = 6;
+            // 
             // add
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(413, 454);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label2);
@@ -153,5 +165,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Data.Entity.Core.EntityClient.EntityCommand entityCommand1;
+        private System.Windows.Forms.Label label3;
     }
 }

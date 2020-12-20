@@ -13,6 +13,12 @@
         <EntityTypeShape EntityType="FactorManagmentModel.sysdiagram" Width="1.5" PointX="4.75" PointY="3.75" IsExpanded="true" />
         <AssociationConnector Association="FactorManagmentModel.FK_Moshtriat_Goods" />
         <AssociationConnector Association="FactorManagmentModel.FK_Mabeaat_Product" />
+        <EntityTypeShape EntityType="FactorManagmentModel.Togarrr" Width="1.5" PointX="5.375" PointY="6.75" />
+        <EntityTypeShape EntityType="FactorManagmentModel.MAbeaat_Status" Width="1.5" PointX="4.75" PointY="10.625" />
+        <EntityTypeShape EntityType="FactorManagmentModel.Togaar_type" Width="1.5" PointX="3.125" PointY="8" />
+        <AssociationConnector Association="FactorManagmentModel.FK_Mabeaat_MAbeaat_Status" />
+        <AssociationConnector Association="FactorManagmentModel.FK_Mabeaat_Togarrr" />
+        <AssociationConnector Association="FactorManagmentModel.FK_Togarrr_Togaar_type" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

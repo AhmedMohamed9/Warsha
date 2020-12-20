@@ -26,6 +26,11 @@ namespace Warsha.Views.Montgat
 
         private void button1_Click(object sender, EventArgs e)
         {
+            if (textBox1.Text==string.Empty||textBox2.Text==string.Empty)
+            {
+                label4.Text = "ادخل البيانات سليمه";
+                return;
+            }
             Product mn = new Product();
             mn.name = textBox1.Text;
             mn.price = decimal.Parse(textBox2.Text);
@@ -60,6 +65,11 @@ namespace Warsha.Views.Montgat
             {
                 e.Handled = true;
             }
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

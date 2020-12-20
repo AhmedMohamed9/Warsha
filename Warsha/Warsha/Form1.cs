@@ -65,5 +65,11 @@ namespace Warsha
             Views.summary.summary sm = new Views.summary.summary();
             sm.ShowDialog();
         }
+
+        private void metroTile6_Click(object sender, EventArgs e)
+        {
+            Views.Togaar.index tg = new Views.Togaar.index();
+            tg.ShowDialog();
+        }
     }
 }

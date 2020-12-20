@@ -31,5 +31,8 @@ namespace Warsha.models
         public virtual DbSet<Moshtriat> Moshtriats { get; set; }
         public virtual DbSet<Product> Products { get; set; }
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
+        public virtual DbSet<Togarrr> Togarrrs { get; set; }
+        public virtual DbSet<MAbeaat_Status> MAbeaat_Status { get; set; }
+        public virtual DbSet<Togaar_type> Togaar_type { get; set; }
     }
 }

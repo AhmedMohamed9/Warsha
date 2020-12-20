@@ -13,6 +13,10 @@
     <EntitySetMapping Name="Mabeaats">
       <EntityTypeMapping TypeName="FactorManagmentModel.Mabeaat">
         <MappingFragment StoreEntitySet="Mabeaat">
+          <ScalarProperty Name="Status_id" ColumnName="Status_id" />
+          <ScalarProperty Name="togarr_id" ColumnName="togarr_id" />
+          <ScalarProperty Name="money_res" ColumnName="money_res" />
+          <ScalarProperty Name="money_done" ColumnName="money_done" />
           <ScalarProperty Name="Total_price" ColumnName="Total_price" />
           <ScalarProperty Name="Quantity" ColumnName="Quantity" />
           <ScalarProperty Name="id" ColumnName="id" />
@@ -25,6 +29,7 @@
     <EntitySetMapping Name="Masrofats">
       <EntityTypeMapping TypeName="FactorManagmentModel.Masrofat">
         <MappingFragment StoreEntitySet="Masrofat">
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
           <ScalarProperty Name="date" ColumnName="date" />
           <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="name" ColumnName="name" />
@@ -63,6 +68,32 @@
           <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
           <ScalarProperty Name="version" ColumnName="version" />
           <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Togarrrs">
+      <EntityTypeMapping TypeName="FactorManagmentModel.Togarrr">
+        <MappingFragment StoreEntitySet="Togarrr">
+          <ScalarProperty Name="type_id" ColumnName="type_id" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MAbeaat_Status">
+      <EntityTypeMapping TypeName="FactorManagmentModel.MAbeaat_Status">
+        <MappingFragment StoreEntitySet="MAbeaat_Status">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Togaar_type">
+      <EntityTypeMapping TypeName="FactorManagmentModel.Togaar_type">
+        <MappingFragment StoreEntitySet="Togaar_type">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id" ColumnName="id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

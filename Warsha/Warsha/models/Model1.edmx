@@ -21,8 +21,19 @@
           <Property Name="Prod_id" Type="int" Nullable="false" />
           <Property Name="date" Type="date" Nullable="false" />
           <Property Name="note" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="Quantity" Type="int" Nullable="false" />
+          <Property Name="Quantity" Type="numeric" Precision="18" Scale="1" Nullable="false" />
           <Property Name="Total_price" Type="numeric" Precision="18" Scale="1" Nullable="false" />
+          <Property Name="money_done" Type="numeric" Precision="18" Scale="1" Nullable="false" />
+          <Property Name="money_res" Type="numeric" Precision="18" Scale="1" Nullable="false" />
+          <Property Name="togarr_id" Type="int" Nullable="false" />
+          <Property Name="Status_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MAbeaat_Status">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar(max)" Nullable="false" />
         </EntityType>
         <EntityType Name="Masrofat">
           <Key>
@@ -31,6 +42,7 @@
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="name" Type="nvarchar(max)" Nullable="false" />
           <Property Name="price" Type="numeric" Precision="18" Scale="1" Nullable="false" />
+          <Property Name="Quantity" Type="decimal" Precision="18" Scale="1" />
           <Property Name="notes" Type="nvarchar(max)" />
           <Property Name="date" Type="date" />
         </EntityType>
@@ -42,7 +54,7 @@
           <Property Name="Goods_id" Type="int" Nullable="false" />
           <Property Name="Date" Type="date" Nullable="false" />
           <Property Name="note" Type="nvarchar(max)" />
-          <Property Name="quantity" Type="int" Nullable="false" />
+          <Property Name="quantity" Type="decimal" Precision="18" Scale="1" Nullable="false" />
           <Property Name="Total_price" Type="numeric" Precision="18" Scale="1" />
           <Property Name="pr" Type="numeric" Precision="18" Scale="1" />
         </EntityType>
@@ -64,6 +76,36 @@
           <Property Name="version" Type="int" />
           <Property Name="definition" Type="varbinary(max)" />
         </EntityType>
+        <EntityType Name="Togaar_type">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Togarrr">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="phone" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="type_id" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Mabeaat_MAbeaat_Status">
+          <End Role="MAbeaat_Status" Type="Self.MAbeaat_Status" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Mabeaat" Type="Self.Mabeaat" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MAbeaat_Status">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Mabeaat">
+              <PropertyRef Name="Status_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Mabeaat_Product">
           <End Role="Product" Type="Self.Product" Multiplicity="1">
             <OnDelete Action="Cascade" />
@@ -75,6 +117,20 @@
             </Principal>
             <Dependent Role="Mabeaat">
               <PropertyRef Name="Prod_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Mabeaat_Togarrr">
+          <End Role="Togarrr" Type="Self.Togarrr" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Mabeaat" Type="Self.Mabeaat" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Togarrr">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Mabeaat">
+              <PropertyRef Name="togarr_id" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -92,20 +148,49 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Togarrr_Togaar_type">
+          <End Role="Togaar_type" Type="Self.Togaar_type" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Togarrr" Type="Self.Togarrr" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Togaar_type">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Togarrr">
+              <PropertyRef Name="type_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="FactorManagmentModelStoreContainer">
           <EntitySet Name="Goods" EntityType="Self.Goods" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Mabeaat" EntityType="Self.Mabeaat" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MAbeaat_Status" EntityType="Self.MAbeaat_Status" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Masrofat" EntityType="Self.Masrofat" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Moshtriat" EntityType="Self.Moshtriat" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Togaar_type" EntityType="Self.Togaar_type" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Togarrr" EntityType="Self.Togarrr" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Mabeaat_MAbeaat_Status" Association="Self.FK_Mabeaat_MAbeaat_Status">
+            <End Role="MAbeaat_Status" EntitySet="MAbeaat_Status" />
+            <End Role="Mabeaat" EntitySet="Mabeaat" />
+          </AssociationSet>
           <AssociationSet Name="FK_Mabeaat_Product" Association="Self.FK_Mabeaat_Product">
             <End Role="Product" EntitySet="Product" />
+            <End Role="Mabeaat" EntitySet="Mabeaat" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Mabeaat_Togarrr" Association="Self.FK_Mabeaat_Togarrr">
+            <End Role="Togarrr" EntitySet="Togarrr" />
             <End Role="Mabeaat" EntitySet="Mabeaat" />
           </AssociationSet>
           <AssociationSet Name="FK_Moshtriat_Goods" Association="Self.FK_Moshtriat_Goods">
             <End Role="Goods" EntitySet="Goods" />
             <End Role="Moshtriat" EntitySet="Moshtriat" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Togarrr_Togaar_type" Association="Self.FK_Togarrr_Togaar_type">
+            <End Role="Togaar_type" EntitySet="Togaar_type" />
+            <End Role="Togarrr" EntitySet="Togarrr" />
           </AssociationSet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
@@ -118,7 +203,7 @@
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Price" Type="Decimal" Nullable="false" />
+          <Property Name="Price" Type="Decimal" Nullable="false" Precision="18" Scale="1" />
           <NavigationProperty Name="Moshtriats" Relationship="FactorManagmentModel.FK_Moshtriat_Goods" FromRole="Good" ToRole="Moshtriat" />
         </EntityType>
         <EntityType Name="Mabeaat">
@@ -130,8 +215,14 @@
           <Property Name="date" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="note" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="Product" Relationship="FactorManagmentModel.FK_Mabeaat_Product" FromRole="Mabeaat" ToRole="Product" />
-          <Property Name="Quantity" Type="Int32" Nullable="false" />
-          <Property Name="Total_price" Type="Decimal" Nullable="false" />
+          <Property Name="Quantity" Type="Decimal" Nullable="false" Precision="18" Scale="1" />
+          <Property Name="Total_price" Type="Decimal" Nullable="false" Precision="18" Scale="1" />
+          <Property Name="money_done" Type="Decimal" Nullable="false" Precision="18" Scale="1" />
+          <Property Name="money_res" Type="Decimal" Nullable="false" Precision="18" Scale="1" />
+          <Property Name="togarr_id" Type="Int32" Nullable="false" />
+          <Property Name="Status_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="MAbeaat_Status" Relationship="FactorManagmentModel.FK_Mabeaat_MAbeaat_Status" FromRole="Mabeaat" ToRole="MAbeaat_Status" />
+          <NavigationProperty Name="Togarrr" Relationship="FactorManagmentModel.FK_Mabeaat_Togarrr" FromRole="Mabeaat" ToRole="Togarrr" />
         </EntityType>
         <EntityType Name="Masrofat">
           <Key>
@@ -139,9 +230,10 @@
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="price" Type="Decimal" Nullable="false" />
+          <Property Name="price" Type="Decimal" Nullable="false" Precision="18" Scale="1" />
           <Property Name="notes" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="date" Type="DateTime" Precision="0" />
+          <Property Name="Quantity" Type="Decimal" Precision="18" Scale="1" />
         </EntityType>
         <EntityType Name="Moshtriat">
           <Key>
@@ -152,8 +244,8 @@
           <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="note" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Good" Relationship="FactorManagmentModel.FK_Moshtriat_Goods" FromRole="Moshtriat" ToRole="Good" />
-          <Property Name="quantity" Type="Int32" Nullable="false" />
-          <Property Name="Total_price" Type="Decimal" Nullable="true" />
+          <Property Name="quantity" Type="Decimal" Nullable="false" Precision="18" Scale="1" />
+          <Property Name="Total_price" Type="Decimal" Nullable="true" Precision="18" Scale="1" />
           <Property Name="pr" Type="Decimal" Precision="18" Scale="1" />
         </EntityType>
         <EntityType Name="Product">
@@ -162,7 +254,7 @@
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="price" Type="Decimal" Nullable="false" />
+          <Property Name="price" Type="Decimal" Nullable="false" Precision="18" Scale="1" />
           <NavigationProperty Name="Mabeaats" Relationship="FactorManagmentModel.FK_Mabeaat_Product" FromRole="Product" ToRole="Mabeaat" />
         </EntityType>
         <EntityType Name="sysdiagram">
@@ -189,6 +281,21 @@
           <AssociationSet Name="FK_Mabeaat_Product" Association="FactorManagmentModel.FK_Mabeaat_Product">
             <End Role="Product" EntitySet="Products" />
             <End Role="Mabeaat" EntitySet="Mabeaats" />
+          </AssociationSet>
+          <EntitySet Name="Togarrrs" EntityType="FactorManagmentModel.Togarrr" />
+          <EntitySet Name="MAbeaat_Status" EntityType="FactorManagmentModel.MAbeaat_Status" />
+          <EntitySet Name="Togaar_type" EntityType="FactorManagmentModel.Togaar_type" />
+          <AssociationSet Name="FK_Mabeaat_MAbeaat_Status" Association="FactorManagmentModel.FK_Mabeaat_MAbeaat_Status">
+            <End Role="MAbeaat_Status" EntitySet="MAbeaat_Status" />
+            <End Role="Mabeaat" EntitySet="Mabeaats" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Mabeaat_Togarrr" Association="FactorManagmentModel.FK_Mabeaat_Togarrr">
+            <End Role="Togarrr" EntitySet="Togarrrs" />
+            <End Role="Mabeaat" EntitySet="Mabeaats" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Togarrr_Togaar_type" Association="FactorManagmentModel.FK_Togarrr_Togaar_type">
+            <End Role="Togaar_type" EntitySet="Togaar_type" />
+            <End Role="Togarrr" EntitySet="Togarrrs" />
           </AssociationSet>
         </EntityContainer>
         <Association Name="FK_Moshtriat_Goods">
@@ -219,6 +326,75 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="Togarrr">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="phone" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="type_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Mabeaats" Relationship="FactorManagmentModel.FK_Mabeaat_Togarrr" FromRole="Togarrr" ToRole="Mabeaat" />
+          <NavigationProperty Name="Togaar_type" Relationship="FactorManagmentModel.FK_Togarrr_Togaar_type" FromRole="Togarrr" ToRole="Togaar_type" />
+        </EntityType>
+        <EntityType Name="MAbeaat_Status">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Mabeaats" Relationship="FactorManagmentModel.FK_Mabeaat_MAbeaat_Status" FromRole="MAbeaat_Status" ToRole="Mabeaat" />
+        </EntityType>
+        <EntityType Name="Togaar_type">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Togarrrs" Relationship="FactorManagmentModel.FK_Togarrr_Togaar_type" FromRole="Togaar_type" ToRole="Togarrr" />
+        </EntityType>
+        <Association Name="FK_Mabeaat_MAbeaat_Status">
+          <End Type="FactorManagmentModel.MAbeaat_Status" Role="MAbeaat_Status" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="FactorManagmentModel.Mabeaat" Role="Mabeaat" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MAbeaat_Status">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Mabeaat">
+              <PropertyRef Name="Status_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Mabeaat_Togarrr">
+          <End Type="FactorManagmentModel.Togarrr" Role="Togarrr" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="FactorManagmentModel.Mabeaat" Role="Mabeaat" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Togarrr">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Mabeaat">
+              <PropertyRef Name="togarr_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Togarrr_Togaar_type">
+          <End Type="FactorManagmentModel.Togaar_type" Role="Togaar_type" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="FactorManagmentModel.Togarrr" Role="Togarrr" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Togaar_type">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Togarrr">
+              <PropertyRef Name="type_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -237,6 +413,10 @@
           <EntitySetMapping Name="Mabeaats">
             <EntityTypeMapping TypeName="FactorManagmentModel.Mabeaat">
               <MappingFragment StoreEntitySet="Mabeaat">
+                <ScalarProperty Name="Status_id" ColumnName="Status_id" />
+                <ScalarProperty Name="togarr_id" ColumnName="togarr_id" />
+                <ScalarProperty Name="money_res" ColumnName="money_res" />
+                <ScalarProperty Name="money_done" ColumnName="money_done" />
                 <ScalarProperty Name="Total_price" ColumnName="Total_price" />
                 <ScalarProperty Name="Quantity" ColumnName="Quantity" />
                 <ScalarProperty Name="id" ColumnName="id" />
@@ -249,6 +429,7 @@
           <EntitySetMapping Name="Masrofats">
             <EntityTypeMapping TypeName="FactorManagmentModel.Masrofat">
               <MappingFragment StoreEntitySet="Masrofat">
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
                 <ScalarProperty Name="date" ColumnName="date" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="name" ColumnName="name" />
@@ -287,6 +468,32 @@
                 <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
                 <ScalarProperty Name="version" ColumnName="version" />
                 <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Togarrrs">
+            <EntityTypeMapping TypeName="FactorManagmentModel.Togarrr">
+              <MappingFragment StoreEntitySet="Togarrr">
+                <ScalarProperty Name="type_id" ColumnName="type_id" />
+                <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MAbeaat_Status">
+            <EntityTypeMapping TypeName="FactorManagmentModel.MAbeaat_Status">
+              <MappingFragment StoreEntitySet="MAbeaat_Status">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Togaar_type">
+            <EntityTypeMapping TypeName="FactorManagmentModel.Togaar_type">
+              <MappingFragment StoreEntitySet="Togaar_type">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

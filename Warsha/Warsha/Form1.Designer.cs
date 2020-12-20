@@ -34,12 +34,13 @@
             this.metroTile3 = new MetroFramework.Controls.MetroTile();
             this.metroTile1 = new MetroFramework.Controls.MetroTile();
             this.Goods = new MetroFramework.Controls.MetroTile();
+            this.metroTile6 = new MetroFramework.Controls.MetroTile();
             this.SuspendLayout();
             // 
             // metroTile2
             // 
             this.metroTile2.BackColor = System.Drawing.Color.White;
-            this.metroTile2.Location = new System.Drawing.Point(249, 502);
+            this.metroTile2.Location = new System.Drawing.Point(237, 295);
             this.metroTile2.Name = "metroTile2";
             this.metroTile2.Size = new System.Drawing.Size(187, 154);
             this.metroTile2.Style = MetroFramework.MetroColorStyle.Orange;
@@ -57,9 +58,9 @@
             // metroTile5
             // 
             this.metroTile5.BackColor = System.Drawing.Color.Maroon;
-            this.metroTile5.Location = new System.Drawing.Point(473, 295);
+            this.metroTile5.Location = new System.Drawing.Point(430, 295);
             this.metroTile5.Name = "metroTile5";
-            this.metroTile5.Size = new System.Drawing.Size(187, 363);
+            this.metroTile5.Size = new System.Drawing.Size(187, 329);
             this.metroTile5.Style = MetroFramework.MetroColorStyle.Green;
             this.metroTile5.TabIndex = 5;
             this.metroTile5.Text = "ملخص الشهر";
@@ -78,7 +79,7 @@
             this.metroTile4.BackColor = System.Drawing.Color.White;
             this.metroTile4.Location = new System.Drawing.Point(34, 94);
             this.metroTile4.Name = "metroTile4";
-            this.metroTile4.Size = new System.Drawing.Size(626, 185);
+            this.metroTile4.Size = new System.Drawing.Size(390, 185);
             this.metroTile4.TabIndex = 4;
             this.metroTile4.Text = "المبيعات";
             this.metroTile4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -93,7 +94,7 @@
             // metroTile3
             // 
             this.metroTile3.BackColor = System.Drawing.Color.White;
-            this.metroTile3.Location = new System.Drawing.Point(249, 295);
+            this.metroTile3.Location = new System.Drawing.Point(237, 470);
             this.metroTile3.Name = "metroTile3";
             this.metroTile3.Size = new System.Drawing.Size(187, 154);
             this.metroTile3.TabIndex = 3;
@@ -129,7 +130,7 @@
             // Goods
             // 
             this.Goods.BackColor = System.Drawing.Color.White;
-            this.Goods.Location = new System.Drawing.Point(35, 502);
+            this.Goods.Location = new System.Drawing.Point(35, 466);
             this.Goods.Name = "Goods";
             this.Goods.Size = new System.Drawing.Size(187, 154);
             this.Goods.Style = MetroFramework.MetroColorStyle.Red;
@@ -144,11 +145,30 @@
             this.Goods.UseTileImage = true;
             this.Goods.Click += new System.EventHandler(this.Goods_Click);
             // 
+            // metroTile6
+            // 
+            this.metroTile6.BackColor = System.Drawing.Color.White;
+            this.metroTile6.Location = new System.Drawing.Point(430, 94);
+            this.metroTile6.Name = "metroTile6";
+            this.metroTile6.Size = new System.Drawing.Size(187, 185);
+            this.metroTile6.Style = MetroFramework.MetroColorStyle.Purple;
+            this.metroTile6.TabIndex = 6;
+            this.metroTile6.Text = "التجار";
+            this.metroTile6.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.metroTile6.TileImage = global::Warsha.Properties.Resources.Mosh;
+            this.metroTile6.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.metroTile6.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
+            this.metroTile6.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
+            this.metroTile6.UseMnemonic = false;
+            this.metroTile6.UseTileImage = true;
+            this.metroTile6.Click += new System.EventHandler(this.metroTile6_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(673, 681);
+            this.ClientSize = new System.Drawing.Size(673, 647);
+            this.Controls.Add(this.metroTile6);
             this.Controls.Add(this.metroTile5);
             this.Controls.Add(this.metroTile4);
             this.Controls.Add(this.metroTile3);
@@ -156,7 +176,8 @@
             this.Controls.Add(this.metroTile1);
             this.Controls.Add(this.Goods);
             this.Name = "Form1";
-            this.Text = "Warsha";
+            this.Text = "نظام حسابات للمصنع";
+            this.TextAlign = System.Windows.Forms.VisualStyles.HorizontalAlign.Center;
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -171,6 +192,7 @@
         private MetroFramework.Controls.MetroTile metroTile3;
         private MetroFramework.Controls.MetroTile metroTile4;
         private MetroFramework.Controls.MetroTile metroTile5;
+        private MetroFramework.Controls.MetroTile metroTile6;
     }
 }
 

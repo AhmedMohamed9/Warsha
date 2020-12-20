@@ -47,9 +47,14 @@ namespace Warsha.Views.Moshtriat
 
         private void button1_Click(object sender, EventArgs e)
         {
+            if (metroComboBox1.SelectedValue==null||textBox2.Text==string.Empty)
+            {
+                label1.Text = "ادخل البيانات سليمه";
+                return;
+            }
             models.Moshtriat msh = new models.Moshtriat();
             msh.note = textBox1.Text;
-            msh.quantity = Int32.Parse(textBox2.Text);
+            msh.quantity = decimal.Parse(textBox2.Text);
             msh.Date = dateTimePicker1.Value;
             msh.Goods_id = Int32.Parse(metroComboBox1.SelectedValue.ToString());
             msh.Total_price = (db.Goods.Where(i => i.id == msh.Goods_id).Select(i => i.Price).Single()) * msh.quantity;

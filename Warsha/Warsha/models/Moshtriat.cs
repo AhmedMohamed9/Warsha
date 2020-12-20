@@ -18,7 +18,7 @@ namespace Warsha.models
         public int Goods_id { get; set; }
         public System.DateTime Date { get; set; }
         public string note { get; set; }
-        public int quantity { get; set; }
+        public decimal quantity { get; set; }
         public Nullable<decimal> Total_price { get; set; }
         public Nullable<decimal> pr { get; set; }
     

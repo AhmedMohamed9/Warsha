@@ -25,6 +25,18 @@ namespace Warsha.Views.Goods
 
         private void button1_Click(object sender, EventArgs e)
         {
+            if (metroTextBox1.Text == string.Empty)
+            {
+                metroTextBox1.Focus();
+                label3.Text = "ادخل اسم البضاعه";
+                return;
+            }
+            if (metroTextBox2.Text == string.Empty)
+            {
+                metroTextBox2.Focus();
+                label3.Text = "ادخل سعر البضاعه";
+                return;
+            }
             models.Good goo = new models.Good();
             goo.Name = metroTextBox1.Text;
             goo.Price = decimal.Parse(metroTextBox2.Text);

@@ -30,5 +30,10 @@ namespace Warsha.Controler
             db.Entry(ms).State = n;
             db.SaveChanges();
         }
+        public void togaar(Togarrr ms,EntityState n)
+        {
+            db.Entry(ms).State = n;
+            db.SaveChanges();
+        }
     }
 }
